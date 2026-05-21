@@ -1,0 +1,14 @@
+artifact_uri: /Users/meetadave/traffic-dashboard/ml/mlruns/716339696772470517/7abcf2af446e48e79e9b3bf498335e98/artifacts
+end_time: 1779361560514
+entry_point_name: ''
+experiment_id: '716339696772470517'
+lifecycle_stage: active
+run_id: 7abcf2af446e48e79e9b3bf498335e98
+run_name: MUC_B2R_002
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1779361556076
+status: 3
+tags: []
+user_id: meetadave

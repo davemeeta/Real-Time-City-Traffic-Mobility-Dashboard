@@ -1,0 +1,8 @@
+artifact_location: /Users/meetadave/traffic-dashboard/ml/mlruns/716339696772470517
+creation_time: 1779026386226
+experiment_id: '716339696772470517'
+last_update_time: 1779026386226
+lifecycle_stage: active
+name: traffic-congestion-lstm
+trace_location: null
+workspace: default

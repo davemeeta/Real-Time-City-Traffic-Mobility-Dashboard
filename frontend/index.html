@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Traffic & Mobility Dashboard — Stuttgart / Munich</title>
+
+  <!-- Leaflet CSS (free, no account, no credit card) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+
+  <!-- D3 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ── Top bar ────────────────────────────────────────────── -->
+<header class="topbar">
+  <div class="topbar-left">
+    <span class="logo">🚦 Traffic Dashboard</span>
+    <span class="subtitle">Stuttgart &amp; Munich — Live</span>
+  </div>
+  <div class="topbar-right">
+    <span class="badge" id="live-badge">● LIVE</span>
+    <span class="stat-pill">Sensors: <strong id="sensor-count">—</strong></span>
+    <span class="stat-pill">Avg Congestion: <strong id="avg-congestion">—</strong></span>
+    <span class="stat-pill" id="last-updated">Updated: —</span>
+  </div>
+</header>
+
+<!-- ── Main layout ────────────────────────────────────────── -->
+<div class="layout">
+
+  <!-- Left sidebar — simulation controls -->
+  <aside class="sidebar">
+    <h3>🔧 Road Closure Simulator</h3>
+    <p class="hint">Toggle roads to simulate closures and see congestion ripple live on the map.</p>
+
+    <div class="sensor-toggles" id="sensor-toggles">
+      <!-- Populated by JS -->
+    </div>
+
+    <button class="btn-simulate" id="btn-simulate">Run Simulation</button>
+    <button class="btn-reset"    id="btn-reset">Reset</button>
+
+    <div class="sim-result" id="sim-result" style="display:none">
+      <h4>Simulation Result</h4>
+      <p>Affected sensors: <strong id="sim-affected">—</strong></p>
+      <p class="sim-note">Red sensors show increased congestion from diverted traffic.</p>
+    </div>
+
+    <!-- Legend -->
+    <div class="legend">
+      <h4>Congestion Level</h4>
+      <div class="legend-row"><span class="dot" style="background:#27ae60"></span> Free flow (0–30%)</div>
+      <div class="legend-row"><span class="dot" style="background:#f39c12"></span> Moderate (30–60%)</div>
+      <div class="legend-row"><span class="dot" style="background:#e74c3c"></span> Heavy (60–80%)</div>
+      <div class="legend-row"><span class="dot" style="background:#7b241c"></span> Jam (80–100%)</div>
+    </div>
+  </aside>
+
+  <!-- Map -->
+  <div id="map"></div>
+
+  <!-- Right panel — forecast chart -->
+  <aside class="chart-panel" id="chart-panel">
+    <div class="chart-header">
+      <h3 id="chart-title">Click a sensor to view forecast</h3>
+      <button class="close-btn" id="close-chart">✕</button>
+    </div>
+
+    <div class="chart-stats" id="chart-stats" style="display:none">
+      <div class="cstat">
+        <span class="cstat-label">Current</span>
+        <span class="cstat-val" id="stat-current">—</span>
+      </div>
+      <div class="cstat">
+        <span class="cstat-label">30 min</span>
+        <span class="cstat-val" id="stat-30">—</span>
+      </div>
+      <div class="cstat">
+        <span class="cstat-label">60 min</span>
+        <span class="cstat-val" id="stat-60">—</span>
+      </div>
+    </div>
+
+    <div id="d3-chart"></div>
+    <p class="chart-hint" id="chart-hint">Select a sensor on the map to see its congestion history and LSTM/Prophet forecast.</p>
+  </aside>
+
+</div>
+<script src="chart.js"></script>
+<script src="map.js"></script>
+</body>
+</html>
