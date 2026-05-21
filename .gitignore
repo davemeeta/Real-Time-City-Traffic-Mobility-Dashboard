@@ -1,0 +1,71 @@
+# ── Python ────────────────────────────────────────────────
+venv
+venv/
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# ── Environment ───────────────────────────────────────────
+.env
+.env.local
+.env.*.local
+
+# ── ML artifacts ──────────────────────────────────────────
+ml/mlruns/
+ml/models/*.h5
+ml/models/*.keras
+ml/models/*.h5.index
+# ml/models/*.pkl
+
+# ── Database ──────────────────────────────────────────────
+postgres_data/
+timescale_data/
+*.sql.bak
+
+# ── Node / Frontend ───────────────────────────────────────
+node_modules/
+frontend-react/dist/
+frontend-react/.vite/
+*.local
+
+# ── Docker ────────────────────────────────────────────────
+.docker/
+
+# ── OS ────────────────────────────────────────────────────
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+
+# ── IDE ───────────────────────────────────────────────────
+.vscode/settings.json
+.idea/
+*.swp
+*.swo
+
+# ── Logs ──────────────────────────────────────────────────
+*.log
+logs/
+pip-log.txt
+
+# ── Kafka ─────────────────────────────────────────────────
+kafka-logs/
+zookeeper-data/
+
+# ── Misc ──────────────────────────────────────────────────
+*.coverage
+.pytest_cache/
+.mypy_cache/
+htmlcov/venv/
+*.dylib
+*.so
