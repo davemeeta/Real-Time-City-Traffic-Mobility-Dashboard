@@ -21,8 +21,7 @@ Frontend Output
 
 A full-stack data engineering and ML project that ingests real-time traffic sensor data from Stuttgart and Munich, forecasts congestion 30 and 60 minutes ahead using LSTM and Prophet models, and provides an interactive map dashboard with a what-if road closure simulator.
 
-Built to demonstrate end-to-end competence across streaming pipelines, time-series ML, and interactive data visualisation — targeting roles at BMW, Bosch, Continental, and Deutsche Bahn.
-
+Built to demonstrate end-to-end competence across streaming pipelines, time-series ML, and interactive data visualisation.
 ---
 
 ## Architecture
